@@ -1,0 +1,1 @@
+<div class="oc-hero-image__parallax-img" style="background-image:url(<?php print $output; ?>)"></div>

@@ -1,0 +1,20 @@
+name = Open Charity
+description = Compucorp Drupal Theming (Task 1)
+package = Core
+version = VERSION
+core = 7.x
+
+regions[header] = Header
+regions[help] = Help
+regions[content] = Content
+regions[footer] = Footer
+
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+regions[highlighted] = Highlighted
+
+stylesheets[all][] = css/style.css
+
+scripts[] = 'js/owl.carousel.min.js'
+scripts[] = 'js/jquery.sticky.js'
+scripts[] = 'js/script.js'

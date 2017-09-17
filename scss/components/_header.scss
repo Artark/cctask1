@@ -1,0 +1,78 @@
+.header {
+  background: $color__background-header;
+  @include scale('padding', 20 0);
+  z-index: 99 !important;
+
+  &__logo {
+    float: left;
+    display: inline-block;
+    width: 154px;
+    line-height: 39px;
+  }
+
+  &__nav {
+    float: right;
+    @include rem();
+    text-transform: uppercase;
+    position: relative;
+
+    ul {
+      display: none;
+      margin: 0;
+
+      li {
+
+        a {
+          font-family: $font__h;
+          color: $color__text-main-white;
+
+          &.oc-button {
+            color: $color__button;
+          }
+        }
+      }
+    }
+
+    &__menu-toggle,
+    &--toggled ul {
+      display: block;
+    }
+
+    @include mq($until: desktop) {
+
+      ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 9999;
+        text-align: center;
+        background: $color__background-header;
+        width: 200px;
+
+        li {
+          display: block;
+          padding: 0;
+          @include scale('padding', 15);
+        }
+      }
+    }
+
+    @include mq(desktop) {
+      &__menu-toggle {
+        display: none;
+      }
+      ul {
+        display: block;
+
+        li {
+          line-height: 39px;
+          @include scale('padding', 0 29 0 0);
+
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
+    }
+  }
+}

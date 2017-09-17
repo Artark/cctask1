@@ -1,0 +1,269 @@
+.panel-pane {
+  @include scale('padding', 26 0 33);
+
+  .pane-title {
+    text-align: center;
+  }
+
+  h1 {
+
+    &.pane-title {
+      @include scale('margin', 0 0 45, 55);
+    }
+  }
+
+  h2 {
+
+    &.pane-title {
+      @include scale('margin', 0 0 22, 26);
+    }
+  }
+
+  h3 {
+
+    &.pane-title {
+      @include scale('margin', 0 0 26, 17);
+    }
+  }
+
+  &--separated {
+
+    + .panel-separator {
+      height: 1px;
+      background: $color__bg-panel-separator;
+    }
+  }
+
+  &--white {
+    background: $color__background-pane;
+  }
+
+  &__event {
+    @include scale('padding', 26 0 33);
+  }
+
+  &__involved {
+    @include scale('padding', 21 0 40);
+
+    h2.pane-title {
+      @include scale('margin-bottom', 39, 26);
+    }
+  }
+
+  &__mission--title {
+    @include scale('padding', 31 0 0);
+  }
+
+  &__mission--content {
+    @include scale('padding', 23 0 48);
+  }
+
+  &__members {
+    @include scale('padding', 44 0 33);
+
+    .oc-img-carousel {
+      @include scale('margin-top', 32);
+    }
+  }
+
+  &__blog {
+    @include scale('padding', 26 0 33);
+  }
+}
+
+.oc-hero-image {
+  position: relative;
+  text-align: center;
+  color: #ffffff;
+  @include scale('padding', 72 0 63);
+
+  &__parallax-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  &__h1,
+  &__body {
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  &__h1 {
+    color: #ffffff;
+    margin: 0;
+  }
+
+  &__h1 + &__body {
+    @include scale('margin-top', 16);
+  }
+
+  &__body {
+    max-width: 610px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__big-text {
+    @include rem(17px);
+    line-height: 1.94117647;
+  }
+
+  &:after {
+    content: '';
+    background: rgba(70,70,70,.45);
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+
+.oc-event {
+  text-align: center;
+
+  &__label,
+  &__date  {
+    @include rem(17px);
+  }
+
+  &__label {
+    display: inline-block;
+    font-family: $font__h;
+    color: $color__text-event-label;
+    @include scale('margin-right', 3, 17);
+  }
+
+  &__date {
+    display: inline-block;
+    font-family: $font__h;
+    color: $color__text-main-white;
+    &__time {
+      font-family: $font__main;
+      font-weight: 600;
+      @include scale('margin-left', 5, 17);
+    }
+  }
+
+  &__addr {
+    @include scale('margin-top', 3);
+  }
+
+  &__reg {
+    @include scale('margin-top', 12);
+    float: right;
+
+    .oc-button {
+      display: none;
+    }
+
+    &__button--mobile {
+      display: inline-block;
+      @include scale('margin-top', 15);
+    }
+
+    @include mq(tablet) {
+
+      &__button--mobile {
+        display: none;
+      }
+
+      .oc-button {
+        display: inline-block;
+      }
+    }
+  }
+
+  @include mq(tablet) {
+
+    & {
+      text-align: left;
+    }
+  }
+}
+
+.oc-involved {
+}
+
+.oc-icon {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  @include scale('padding', 20);
+  @include scale('margin', 0 auto 6);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: $color__bg-mission-icon;
+
+  img {
+    height: 100%;
+    width: auto;
+  }
+
+  .oc-grid-col--white & {
+    border: 10px solid #ffffff;
+    @include scale('margin', -50 auto 6);
+  }
+}
+
+.oc-img-carousel {
+  @include scale('margin', 0 -44);
+
+  @include mq($until: tablet) {
+    @include scale('margin', 0);
+  }
+
+  .owl-item {
+    position: relative;
+    height: 80px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      max-width: 144px;
+      max-height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.oc-recent-blog {
+
+  &__title {
+    @include scale('padding-bottom', 5);
+    @include scale('margin-bottom', 14);
+    border-bottom: 1px solid #f2f2f2;
+
+    a {
+      display: block;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  }
+
+  &__body {
+
+  }
+
+  &__post-date {
+    border-top: 1px solid #f2f2f2;
+    @include scale('padding-top', 13);
+    @include scale('margin-top', 23);
+  }
+}

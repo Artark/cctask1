@@ -1,0 +1,45 @@
+button,
+.oc-button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  display: inline-block;
+  border: 1px solid;
+  border-color: $color__border-button;
+  color: $color__button;
+  @include rem();
+  line-height: 1;
+  text-transform: uppercase;
+  @include scale('padding', 12 25);
+  -webkit-border-radius: 2px;
+  -ms-border-radius: 2px;
+  border-radius: 2px;
+
+  &:hover {
+    border-color: $color__border-button-hover;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $color__border-button-focus;
+  }
+}
+
+.oc-button--filled {
+  @include scale('padding', 13 21);
+  border: none;
+  color: $color__button-filled;
+  background: $color__bg-button;
+
+  &:hover,
+  &:visited {
+    color: $color__button-filled;
+    background: $color__bg-button;
+  }
+
+  &:active,
+  &:focus {
+    color: $color__button-filled;
+    background: $color__bg-button;
+  }
+}

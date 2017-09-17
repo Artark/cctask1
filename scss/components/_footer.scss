@@ -1,0 +1,39 @@
+.footer {
+  color: $color__text-footer;
+  background: $color__background-footer;
+
+  a {
+    color: $color__link-footer;
+  }
+
+  &__social-nav {
+    @include rem(18px);
+    @include scale('padding', 25 0, 18);
+
+    + .region-footer {
+      border-top: 1px solid $color__border-top-footer;
+    }
+  }
+
+  .region-footer {
+    @include scale('padding', 19 0);
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.social-nav {
+  a {
+    @include scale('margin-right', 17);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  span {
+    display: none;
+  }
+}

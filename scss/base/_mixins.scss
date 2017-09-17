@@ -1,0 +1,45 @@
+@include mq-add-breakpoint(mobile, 480);
+@include mq-add-breakpoint(tablet, 768);
+@include mq-add-breakpoint(desktop, 960);
+@include mq-add-breakpoint(wide, 1200);
+
+$mq-media-type: screen;
+
+$px-values-def: 14px !default;
+$baseline-px: 16px !default;
+$baseFontSize: 14;
+
+@mixin rem($px-values: $px-values-def) {
+  $baseline-rem: $baseline-px / 1rem;
+  font-size: $px-values;
+  font-size: $px-values / $baseline-rem;
+}
+
+@mixin scale($properties, $sizes, $base: $baseFontSize) {
+  $values: ();
+  $sublists: false;
+  @each $size in $sizes {
+    @if type-of($size) == list {
+      $sublists: true;
+      $values-list: ();
+      @each $size-list in $size {
+        $values-list: append($values-list, if(type-of($size-list) != number or $size-list == 0, $size-list, #{$size-list / $base}em));
+      }
+      $values: append($values, join((), $values-list));
+    } @else {
+      $values: append($values, if(type-of($size) != number or $size == 0, $size, #{$size / $base}em));
+    }
+  }
+  $value: join((), $values, if($sublists, comma, space));
+  @each $property in $properties { #{$property}: $value }
+}
+
+@mixin clearfix() {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+@mixin clearfix-after() {
+  clear: both;
+}
